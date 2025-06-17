@@ -621,7 +621,7 @@ const HomePage = () => {
             <button className="primary-button" onClick={() => navigate('/scripts')}>
               Explore Scanners
             </button>
-            <button className="secondary-button" onClick={() => navigate('/risk-calculator')}>
+            <button className="secondary-button" onClick={() => navigate('/calculator')}>
               Calculate Risk
             </button>
           </div>
