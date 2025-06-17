@@ -1,0 +1,317 @@
+/* .sql-injection-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-top: 3rem;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sql-injection-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2d3142;
+}
+
+.sql-injection-container p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sql-injection-container input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.sql-injection-container button {
+  padding: 0.7rem 1.4rem;
+  background-color: #1b263b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sql-injection-container button:hover {
+  background-color: #415a77;
+}
+
+.sqli-output {
+  margin-top: 1.5rem;
+  background-color: #e0e0e0;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  max-height: 300px;
+  overflow-y: auto;
+} */
+
+/* src/components/Scripts.css */
+/* SQLInjection.css */
+
+
+
+/* SQLInjection.css */
+:root {
+  --primary: #6e45e2;
+  --primary-dark: #4a2dbf;
+  --danger: #ff5f56;
+  --success: #27c93f;
+  --warning: #ffbd2e;
+  --dark: #0a0a1a;
+  --darker: #050510;
+  --light: #e0e0ff;
+  --lighter: #ffffff;
+  --border: #2a2a4a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.sql-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.sql-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sql-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--warning));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sql-header p {
+  opacity: 0.8;
+}
+
+.sql-content {
+  background-color: var(--darker);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.sql-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--light);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.3);
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.scan-button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.scan-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(110, 69, 226, 0.3);
+}
+
+.scan-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background-color: rgba(255, 95, 86, 0.1);
+  border-left: 4px solid var(--danger);
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.error-message h3 {
+  color: var(--danger);
+  margin-bottom: 0.5rem;
+}
+
+.retry-button {
+  background: none;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background-color: rgba(255, 95, 86, 0.2);
+}
+
+.result-box {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  border-left: 4px solid;
+}
+
+.result-box.vulnerable {
+  background-color: rgba(255, 95, 86, 0.1);
+  border-left-color: var(--danger);
+}
+
+.result-box.safe {
+  background-color: rgba(39, 201, 63, 0.1);
+  border-left-color: var(--success);
+}
+
+.result-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.result-box.vulnerable .result-text {
+  color: var(--danger);
+}
+
+.result-box.safe .result-text {
+  color: var(--success);
+}
+
+.recommendation {
+  margin-top: 1rem;
+}
+
+.recommendation h4 {
+  margin-bottom: 0.5rem;
+}
+
+.recommendation ul {
+  padding-left: 1.5rem;
+}
+
+.recommendation li {
+  margin-bottom: 0.3rem;
+}
+
+.safe-message {
+  opacity: 0.9;
+}
+
+.sql-info {
+  background-color: var(--darker);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.sql-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.test-sites {
+  margin-top: 1rem;
+}
+
+.test-sites h4 {
+  margin-bottom: 0.5rem;
+}
+
+.test-sites ul {
+  padding-left: 1.5rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .sql-container {
+    padding: 1rem;
+  }
+  
+  .sql-content {
+    padding: 1.5rem;
+  }
+  
+  .sql-header h1 {
+    font-size: 1.8rem;
+  }
+}
